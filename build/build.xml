@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<project name="FacebookAIRLib" basedir="../" default="release">
+	
+	<!-- Define variables/paths used in this build script -->
+	<property file="build/build.properties" />
+	<property name="nl" value="&#13;&#10;" />
+	<property name="tab" value="&#x0009;" />
+	
+	<!-- Define Flex Ant Tasks -->
+	<taskdef resource="flexTasks.tasks" classpath="${flex.ant.tasks}" />
+	
+	<!-- Define Ant-Contrib Tasks -->
+	<taskdef resource="net/sf/antcontrib/antlib.xml" classpath="${ant.contrib.tasks}" />
+	
+	<!-- Display warning -->
+	<target name="properties">
+		<echo message="Have you edited the properties file to make sure the paths are right on your system?" />
+	</target>
+	
+	<!-- Update the manifest file. -->
+	<target name="manifest" depends="properties">
+		<echo message="Updating the manifest file." />
+		<echo file="${manifest}">&lt;?xml version="1.0"?&gt;${nl}&lt;componentPackage&gt;</echo>
+		<for param="file">
+			<path>
+				<fileset dir="${src.dir}" includes="**/*as" />
+			</path>
+			<sequential>
+				<propertyregex property="classpath" override="true" input="@{file}" regexp=".*(com\${file.separator}facebook[^\.]*).as" replace="\1" casesensitive="false" />
+				<propertyregex property="class" override="true" input="${classpath}" regexp="\${file.separator}" replace="." global="true" />
+				<if>
+					<and>
+						<isset property="classpath" />
+						<isset property="class" />
+					</and>
+					<then>
+						<echo file="${manifest}" append="true">${nl}${tab}&lt;component id="${class}" class="${class}" /&gt;</echo>
+					</then>
+				</if>
+			</sequential>
+		</for>
+		<echo file="${manifest}" append="true">${nl}&lt;/componentPackage&gt;</echo>
+	</target>
+	
+	<!-- Generate the SWC file -->
+	<target name="component" depends="manifest">
+		<compc output="${bin.dir}/${output.name}.swc">
+			<library-path dir="${libs.dir}" append="true">
+				<include name="*.swc" />
+			</library-path>
+			<external-library-path file="${FLEX_HOME}/frameworks/libs/air/airglobal.swc" append="true" />
+			<source-path path-element="${src.dir}" />
+			<namespace uri="${manifest.ns}" manifest="${manifest}" />
+			<in uri="${manifest.ns}"/>
+		</compc>
+	</target>
+	
+	<!-- Clean and re-generate the documentation -->
+	<target name="docs" depends="clean-docs,compile-docs" />
+	
+	<!-- Clean the documentation -->
+	<target name="clean-docs">
+		<delete dir="${docs.dir}" includeemptydirs="true" failonerror="true" />
+		<mkdir dir="${docs.dir}" />
+	</target>
+	
+	<!-- Generate the documentation -->
+	<target name="compile-docs" depends="manifest">
+		<exec executable="${flex.bin}/${asdoc}">
+			<arg line="-source-path ${src.dir}" />
+			<arg line="-external-library-path ${libs.dir}" />
+			<arg line="-external-library-path ${FLEX_HOME}/frameworks/libs/air" />
+			<arg line="-namespace ${manifest.ns} ${manifest}" />
+			<arg line="-doc-namespaces ${manifest.ns}" />
+			<arg line="-output ${docs.dir}" />
+			<arg line="-templates-path ${flex.asdoc.templates}" />
+			<arg line="-main-title ${docs.title}" />
+			<arg line="-window-title ${docs.title}" />
+			<arg line="-package com.facebook.air ${docs.package.com.facebook.air}" />
+			<arg line="-package com.facebook.utils ${docs.package.com.facebook.utils}" />
+			<arg line="-package com.facebook.views ${docs.package.com.facebook.views}" />
+		</exec>
+	</target>
+	
+	<!-- Package project for distribution -->
+	<target name="release" depends="component,docs">
+		<mkdir dir="${bin-release.dir}" />
+		<zip destfile="${bin-release.dir}/${output.name}.zip" basedir="${basedir}" includes="bin/**,docs/**,libs/**,src/**,README.md" />
+	</target>
+	
+</project>

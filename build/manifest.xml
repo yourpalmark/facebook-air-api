@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<componentPackage>
+	<component id="com.facebook.air.JSONCall" class="com.facebook.air.JSONCall" />
+	<component id="com.facebook.air.JSONEvent" class="com.facebook.air.JSONEvent" />
+	<component id="com.facebook.air.SessionData" class="com.facebook.air.SessionData" />
+	<component id="com.facebook.utils.DesktopSessionHelper" class="com.facebook.utils.DesktopSessionHelper" />
+	<component id="com.facebook.views.BaseWindow" class="com.facebook.views.BaseWindow" />
+	<component id="com.facebook.views.Distractor" class="com.facebook.views.Distractor" />
+	<component id="com.facebook.views.LoginWindow" class="com.facebook.views.LoginWindow" />
+	<component id="com.facebook.views.PermissionWindow" class="com.facebook.views.PermissionWindow" />
+</componentPackage>
