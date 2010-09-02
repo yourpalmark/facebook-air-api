@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<project name="FacebookAIRLib" basedir="../" default="release">
+<project name="facebook-air-api" basedir="../" default="release">
 	
 	<!-- Define variables/paths used in this build script -->
 	<property file="build/build.properties" />
