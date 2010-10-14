@@ -44,15 +44,14 @@
 	
 	<!-- Generate the SWC file -->
 	<target name="component" depends="manifest">
-		<compc output="${bin.dir}/${output.name}.swc">
-			<library-path dir="${libs.dir}" append="true">
-				<include name="*.swc" />
-			</library-path>
-			<external-library-path file="${FLEX_HOME}/frameworks/libs/air/airglobal.swc" append="true" />
-			<source-path path-element="${src.dir}" />
-			<namespace uri="${manifest.ns}" manifest="${manifest}" />
-			<in uri="${manifest.ns}"/>
-		</compc>
+		<exec executable="${flex.bin}/${acompc}" failonerror="true">
+			<arg line="-output ${bin.dir}/${output.name}.swc"/>
+			<arg line="-target-player '10.0.0'"/>
+			<arg line="-source-path ${src.dir}" />
+			<arg line="-library-path ${libs.dir}"/>
+			<arg line="-namespace ${manifest.ns} ${manifest}" />
+			<arg line="-in ${manifest.ns}" />
+		</exec>
 	</target>
 	
 	<!-- Clean and re-generate the documentation -->
@@ -67,18 +66,19 @@
 	<!-- Generate the documentation -->
 	<target name="compile-docs" depends="manifest">
 		<exec executable="${flex.bin}/${asdoc}">
+			<arg line="-output ${docs.dir}" />
+			<arg line="-target-player '10.0.0'"/>
+			<arg line="-load-config ${FLEX_HOME}/frameworks/air-config.xml"></arg>
 			<arg line="-source-path ${src.dir}" />
 			<arg line="-external-library-path ${libs.dir}" />
-			<arg line="-external-library-path ${FLEX_HOME}/frameworks/libs/air" />
+			<arg line="-external-library-path ${FLEX_HOME}/frameworks/libs/air"></arg>
 			<arg line="-namespace ${manifest.ns} ${manifest}" />
 			<arg line="-doc-namespaces ${manifest.ns}" />
-			<arg line="-output ${docs.dir}" />
 			<arg line="-templates-path ${flex.asdoc.templates}" />
 			<arg line="-main-title ${docs.title}" />
 			<arg line="-window-title ${docs.title}" />
-			<arg line="-package com.facebook.air ${docs.package.com.facebook.air}" />
-			<arg line="-package com.facebook.utils ${docs.package.com.facebook.utils}" />
-			<arg line="-package com.facebook.views ${docs.package.com.facebook.views}" />
+			<arg line="-package com.facebook.graph ${docs.package.com.facebook.graph}" />
+			<arg line="-package com.facebook.graph.windows ${docs.package.com.facebook.graph.windows}" />
 		</exec>
 	</target>
 	
