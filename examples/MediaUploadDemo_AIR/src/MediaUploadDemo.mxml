@@ -1,37 +1,36 @@
 <?xml version='1.0' encoding='utf-8'?>
 
 <!--
-Copyright (c) 2010, Adobe Systems Incorporated
-All rights reserved.
+  Copyright (c) 2010, Adobe Systems Incorporated
+  All rights reserved.
 
-Redistribution and use in source and binary forms, with or without 
-modification, are permitted provided that the following conditions are
-met:
+  Redistribution and use in source and binary forms, with or without 
+  modification, are permitted provided that the following conditions are
+  met:
 
-* Redistributions of source code must retain the above copyright notice, 
-this list of conditions and the following disclaimer.
+  * Redistributions of source code must retain the above copyright notice, 
+    this list of conditions and the following disclaimer.
+  
+  * Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the 
+    documentation and/or other materials provided with the distribution.
+  
+  * Neither the name of Adobe Systems Incorporated nor the names of its 
+    contributors may be used to endorse or promote products derived from 
+    this software without specific prior written permission.
 
-* Redistributions in binary form must reproduce the above copyright
-notice, this list of conditions and the following disclaimer in the 
-documentation and/or other materials provided with the distribution.
-
-* Neither the name of Adobe Systems Incorporated nor the names of its 
-contributors may be used to endorse or promote products derived from 
-this software without specific prior written permission.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS
-IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
-THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
-PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR 
-CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
-EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
-PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
-PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
-LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
-NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
-SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS
+  IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+  THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+  PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR 
+  CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+  PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+  PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
-
 
 <s:WindowedApplication xmlns:fx='http://ns.adobe.com/mxml/2009' 
 					   xmlns:s='library://ns.adobe.com/flex/spark'
@@ -62,6 +61,9 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 			protected var bmd:BitmapData;
 			protected var isSnapshot:Boolean = false;
 			
+			protected static const APP_ID:String = "YOUR_APP_ID"; //Place your application id here
+			protected static const APP_ORIGIN:String = "http://your.site.url.com/"; //Place your specified site URL for your app here. This is needed for clearing cookies when logging out.  
+			
 			protected function init():void {
 				
 				if (Camera.isSupported) {
@@ -91,8 +93,8 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 				logoutBtn.enabled = false;
 				
 				status = 'Click "login" to start';
-				
-				FacebookDesktop.init('YOUR_APPLICATION_ID', handleLogin);
+								
+				FacebookDesktop.init(APP_ID, handleInit);
 			}
 			
 			protected function login():void {
@@ -100,7 +102,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 			}
 			
 			protected function logout():void {
-				FacebookDesktop.logout();
+				FacebookDesktop.logout(handleLogout, APP_ORIGIN);
 			}
 			
 			protected function browseForUpload():void {
@@ -115,7 +117,6 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 			}
 			
 			protected function upload():void {
-				status = '';
 				var img:* = (isSnapshot) ? bmd : fileRef;
 				var values:Object = {message:'My photo caption', fileName:'FILE_NAME',image:img};
 				
@@ -123,6 +124,9 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 				distractor.visible = true;
 			}
 			
+			protected function handleInit(response:Object, fail:Object):void {
+				handleLogin(response, fail);
+			}
 			
 			protected function handleLogin(response:Object, fail:Object):void {
 				if (response) {
@@ -135,20 +139,18 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 				}
 			}
 			
-			protected function handleLogout(response:Object, fail:Object):void {
-				if (response) {
-					mediaName.text =  '';
-					distractor.visible = false;
-					previewImage.source = null;
+			protected function handleLogout(response:Object):void {
+				mediaName.text =  '';
+				distractor.visible = false;
+				previewImage.source = null;
 					
-					browseBtn.enabled = false;
-					snapshotBtn.enabled = false;
-					uploadBtn.enabled = false;
-					loginBtn.enabled  = true;
-					logoutBtn.enabled = false;
+				browseBtn.enabled = false;
+				snapshotBtn.enabled = false;
+				uploadBtn.enabled = false;
+				loginBtn.enabled  = true;
+				logoutBtn.enabled = false;
 					
-					status = 'Click "login" to start';
-				}
+				status = 'Click "login" to start';
 			}
 			
 			protected function handleFileSelect(event:Event):void {

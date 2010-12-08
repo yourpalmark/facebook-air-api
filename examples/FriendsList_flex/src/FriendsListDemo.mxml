@@ -60,27 +60,23 @@
 			protected var friendsModel:FriendsModel;
 			protected var win:Window;
 			
-			protected function init():void {
-				friendsList.itemRenderer = new FriendsListRenderer();
-				FacebookDesktop.init('YOUR_APPLICATION_ID', handleLogin);
-			}
+			protected static const APP_ID:String = "YOUR_APP_ID"; //Place your application id here
 			
-			protected function login():void {
-				FacebookDesktop.login(handleLogin, []);
-			}
-			
-			protected function logOut():void {
-				FacebookDesktop.logout();
-				resetUI();
-			}
-			
-			protected function resetUI():void {
+			protected function init():void {				
 				loginBtn.label = 'Login';
 				loginBtn.enabled = true;
 				showDetailsBtn.visible = false;
-				friendsList.dataProvider = new ArrayList();
+				friendsList.dataProvider = new ArrayList();				
+				friendsList.itemRenderer = new FriendsListRenderer();
+				
+				FacebookDesktop.manageSession = false;
+				FacebookDesktop.init(APP_ID);
 			}
 			
+			protected function login():void {
+				FacebookDesktop.login(handleLogin);
+			}
+		
 			protected function loadFriends():void {
 				friendsModel = new FriendsModel();
 				friendsList.dataProvider = friendsModel.dataProvider;
@@ -182,8 +178,7 @@
 	<s:HGroup width="100%">
 		<s:Button id="showDetailsBtn" visible="false" click="showDetails()" />
 		<mx:Spacer width="100%" />
-		<s:Button id="loginBtn" label="Login" click="login()" />
-		<s:Button id="loginOutBtn" label="Login Out" click="logOut()" />
+		<s:Button id="loginBtn" label="Login" click="login()" />		
 	</s:HGroup>
 	<s:List id="friendsList" width="100%" height="100%" change="handleListChange()" />
 	
