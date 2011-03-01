@@ -47,7 +47,6 @@
             import com.chewtinfoil.utils.StringUtils;
             import com.facebook.graph.FacebookDesktop;
             import com.facebook.graph.controls.Distractor;
-            
             import com.facebook.graph.net.FacebookRequest;
             
             import mx.collections.ArrayList;
@@ -62,6 +61,9 @@
             protected var loading:Distractor;
 
             protected var errorDialog:ErrorDialog;
+			
+			protected static const APP_ID:String = "YOUR_APP_ID"; //Place your application id here
+			protected static const APP_ORIGIN:String = "http://your.site.url.com/"; //Place your specified site URL for your app here. This is needed for clearing cookies when logging out.  
 
             protected function init():void {
                 loading = new Distractor();
@@ -86,10 +88,10 @@
 				
                 //DesktopAPITester Application ID
                 //Initialize the facebook API using the application ID from your facebook developers page.
-                FacebookDesktop.init('YOUR_APPLICATION_ID', handleLogin);
+				FacebookDesktop.init(APP_ID, handleInit); 
             }
 
-            protected function toggleLogin():void {
+            protected function toggleLogin():void {				
                 if (FacebookDesktop.getSession() == null) {
 					var permissions:Array = ['publish_stream','create_event','rsvp_event','sms','offline_access','email','read_insights','read_stream','user_about_me',
 						'user_activities','user_birthday','user_education_history','user_events','user_groups','user_hometown',
@@ -98,19 +100,19 @@
 						'user_videos','user_website','user_work_history','read_friendlists','read_requests','user_notes'];
                     FacebookDesktop.login(handleLogin, permissions);
                 } else {
-                    FacebookDesktop.logout();
+                    FacebookDesktop.logout(handleLogout, APP_ORIGIN); //The siteURL specified for desktop app. Needed for clearing cookie on logout
                 }
             }
 
             protected function searchNewsFeed():void {
-				searchBtn.enabled = false;
                 var query:String = StringUtils.trim(searchTxt.text);
-                if (StringUtils.isEmpty(query)) { return; }
+				
                 if (StringUtils.isNumeric(query)) { query = '"' + query + '"';} //Facebook returns error for just numeral searches, wrap quotes to pass request as string literal
 
                 loading.visible = true;
 
                 NewsModel.searchNewsFeed(query, searchSinceDate.selectedDate);
+				searchBtn.enabled = false;
             }
 
             /**
@@ -129,19 +131,34 @@
 
                 resultCount.text = NewsModel.newsFeedDp.length + ' results found.';
             }
+			
+			protected function handleInit(response:Object, fail:Object):void {
+				if (response) {
+					searchBtn.enabled = true;
+					refreshBtn.enabled = true;
+					loginLogoutButton.label = 'Logout';
+					status = "Logged In";										
+					loadHomeFeed();
+				} else {
+					searchBtn.enabled = false;
+					refreshBtn.enabled = false;
+					loginLogoutButton.label = 'Login';
+					status = "Click Login to start";
+				}
+			}
 
             protected function handleLogin(response:Object, fail:Object):void {
-                trace('login', response)
-				if (!response) { return; }
-
-                searchBtn.enabled = true;
-                refreshBtn.enabled = true;
-                loginLogoutButton.label = 'Logout';
-
-                loadHomeFeed();
+				if (response) {
+                	searchBtn.enabled = true;
+                	refreshBtn.enabled = true;
+                	loginLogoutButton.label = 'Logout';
+					status = "Logged In";
+	
+                	loadHomeFeed();
+				}
             }
 
-            protected function handleLogout(response:Object, fail:Object):void {
+            protected function handleLogout(success:Boolean):void {
                 searchBtn.enabled = false;
                 refreshBtn.enabled = false;
                 loginLogoutButton.label = 'Login';
@@ -157,7 +174,10 @@
             protected function handleLoadError(event:NewsEvent):void {
                 errorDialog.setError("Error", String(event.data));
                 PopUpManager.addPopUp(errorDialog, this, true);
-                PopUpManager.centerPopUp(errorDialog);
+                PopUpManager.centerPopUp(errorDialog);				
+				
+				loading.visible = false;
+				searchBtn.enabled = true;
             }
 
         ]]>
