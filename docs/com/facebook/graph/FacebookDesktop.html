@@ -1,0 +1,917 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../../../style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="../../../print.css" type="text/css" media="print">
+<meta content="FacebookDesktop,com.facebook.graph.FacebookDesktop,locale,manageSession,api,callRestAPI,deleteObject,fqlMultiQuery,fqlQuery,getImageUrl,getRawResult,getSession,handleLogout,hasNext,hasPrevious,init,login,logout,nextPage,postData,previousPage,requestExtendedPermissions" name="keywords">
+<title>com.facebook.graph.FacebookDesktop</title>
+</head>
+<body>
+<script type="text/javascript" language="javascript" src="../../../asdoc.js"></script><script type="text/javascript" language="javascript" src="../../../cookies.js"></script><script type="text/javascript" language="javascript">
+<!--
+				asdocTitle = 'FacebookDesktop - ActionScript 3.0 Client Library for Facebook Graph API';
+				var baseRef = '../../../';
+				window.onload = configPage;
+			--></script>
+<table style="display:none" id="titleTable" cellspacing="0" cellpadding="0" class="titleTable">
+<tr>
+<td align="left" class="titleTableTitle">ActionScript 3.0 Client Library for Facebook Graph API</td><td align="right" class="titleTableTopNav"><a onclick="loadClassListFrame('../../../all-classes.html')" href="../../../package-summary.html">All&nbsp;Packages</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../all-classes.html')" href="../../../class-summary.html">All&nbsp;Classes</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../index-list.html')" href="../../../all-index-A.html">Index</a>&nbsp;|&nbsp;<a href="../../../index.html?com/facebook/graph/FacebookDesktop.html&amp;com/facebook/graph/class-list.html" id="framesLink1">Frames</a><a onclick="parent.location=document.location" href="" style="display:none" id="noFramesLink1">No&nbsp;Frames</a></td><td rowspan="3" align="right" class="titleTableLogo"><img alt="Adobe Logo" title="Adobe Logo" class="logoImage" src="../../../images/logo.jpg"></td>
+</tr>
+<tr class="titleTableRow2">
+<td align="left" id="subTitle" class="titleTableSubTitle">Class&nbsp;FacebookDesktop</td><td align="right" id="subNav" class="titleTableSubNav"><a href="#propertySummary">Properties</a>&nbsp;| <a href="#methodSummary">Methods</a></td>
+</tr>
+<tr class="titleTableRow3">
+<td colspan="2">&nbsp;</td>
+</tr>
+</table>
+<script type="text/javascript" language="javascript">
+<!--
+if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Class FacebookDesktop"); titleBar_setSubNav(false,true,false,false,false,false,true,false,false,false,false,false,false,false);}
+--></script>
+<div class="MainContent">
+<table cellspacing="0" cellpadding="0" class="classHeaderTable">
+<tr>
+<td class="classHeaderTableLabel">Package</td><td><a onclick="javascript:loadClassListFrame('class-list.html')" href="package-detail.html">com.facebook.graph</a></td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Class</td><td class="classSignature">public class FacebookDesktop</td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Inheritance</td><td class="inheritanceList">FacebookDesktop <img class="inheritArrow" alt="Inheritance" title="Inheritance" src="../../../images/inherit-arrow.gif"> com.facebook.graph.core.AbstractFacebook</td>
+</tr>
+</table>
+<p></p>
+   For use in AIR, to access the Facebook Graph API from the desktop.
+      <p></p>
+<br>
+<hr>
+</div>
+<a name="propertySummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Properties</div>
+<table id="summaryTableProperty" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#locale">locale</a> : String<div class="summaryTableDescription">[static][write-only]</div>
+</td><td class="summaryTableOwnerCol">FacebookDesktop</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#manageSession">manageSession</a> : Boolean<div class="summaryTableDescription">[static][write-only]
+     Setting to true (default), this class will manage
+     the session and access token internally.</div>
+</td><td class="summaryTableOwnerCol">FacebookDesktop</td>
+</tr>
+</table>
+</div>
+<a name="methodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Methods</div>
+<table id="summaryTableMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#FacebookDesktop()">FacebookDesktop</a>()</div>
+<div class="summaryTableDescription">
+     Creates a new FacebookDesktop instance
+          </div>
+</td><td class="summaryTableOwnerCol">FacebookDesktop</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#api()">api</a>(method:String, callback:Function, params:String = null, requestMethod:* = GET):void</div>
+<div class="summaryTableDescription">[static]
+     Makes a new request on the Facebook Graph API.</div>
+</td><td class="summaryTableOwnerCol">FacebookDesktop</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#callRestAPI()">callRestAPI</a>(methodName:String, callback:Function = null, values:String = null, requestMethod:* = GET):void</div>
+<div class="summaryTableDescription">[static]
+     Used to make old style RESTful API calls on Facebook.</div>
+</td><td class="summaryTableOwnerCol">FacebookDesktop</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#deleteObject()">deleteObject</a>(method:String, callback:Function):void</div>
+<div class="summaryTableDescription">[static]
+     Deletes an object from Facebook.</div>
+</td><td class="summaryTableOwnerCol">FacebookDesktop</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#fqlMultiQuery()">fqlMultiQuery</a>(queries:FQLMultiQuery, callback:Function = null, parser:IResultParser = null):void</div>
+<div class="summaryTableDescription">[static]
+  Executes an FQL multiquery on api.facebook.com.</div>
+</td><td class="summaryTableOwnerCol">FacebookDesktop</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#fqlQuery()">fqlQuery</a>(query:String, callback:Function = null, values:Object = null):void</div>
+<div class="summaryTableDescription">[static]
+  Executes an FQL query on api.facebook.com.</div>
+</td><td class="summaryTableOwnerCol">FacebookDesktop</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#getImageUrl()">getImageUrl</a>(id:String, type:String = null):String</div>
+<div class="summaryTableDescription">[static]
+     Utility method to format a picture URL,
+     in order to load an image from Facebook.</div>
+</td><td class="summaryTableOwnerCol">FacebookDesktop</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#getRawResult()">getRawResult</a>(data:Object):Object</div>
+<div class="summaryTableDescription">[static]
+     Returns a reference to the entire raw object
+  Facebook returns (including paging, etc.).</div>
+</td><td class="summaryTableOwnerCol">FacebookDesktop</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#getSession()">getSession</a>():FacebookSession</div>
+<div class="summaryTableDescription">[static]
+     Synchronous call to return the current user's session.</div>
+</td><td class="summaryTableOwnerCol">FacebookDesktop</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#hasNext()">hasNext</a>(data:Object):Boolean</div>
+<div class="summaryTableDescription">[static]
+     Asks if another page exists
+  after this result object.</div>
+</td><td class="summaryTableOwnerCol">FacebookDesktop</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#hasPrevious()">hasPrevious</a>(data:Object):Boolean</div>
+<div class="summaryTableDescription">[static]
+     Asks if a page exists
+  before this result object.</div>
+</td><td class="summaryTableOwnerCol">FacebookDesktop</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#init()">init</a>(applicationId:String, callback:Function = null, accessToken:String = null):void</div>
+<div class="summaryTableDescription">[static]
+     Initializes this Facebook singleton with your application ID.</div>
+</td><td class="summaryTableOwnerCol">FacebookDesktop</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#login()">login</a>(callback:Function, ... extendedPermissions):void</div>
+<div class="summaryTableDescription">[static]
+     Opens a new login window so the current user can log in to Facebook.</div>
+</td><td class="summaryTableOwnerCol">FacebookDesktop</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#logout()">logout</a>(callback:Function = null, appOrigin:String = null):void</div>
+<div class="summaryTableDescription">[static]
+     Clears a user's local session.</div>
+</td><td class="summaryTableOwnerCol">FacebookDesktop</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#nextPage()">nextPage</a>(data:Object, callback:Function):void</div>
+<div class="summaryTableDescription">[static]
+     Retrieves the next page that is associated with result object passed in.</div>
+</td><td class="summaryTableOwnerCol">FacebookDesktop</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#postData()">postData</a>(method:String, callback:Function, params:* = null):void</div>
+<div class="summaryTableDescription">[static]
+     Shortcut method to post data to Facebook.</div>
+</td><td class="summaryTableOwnerCol">FacebookDesktop</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#previousPage()">previousPage</a>(data:Object, callback:Function):void</div>
+<div class="summaryTableDescription">[static]
+     Retrieves the previous page that is associated with result object passed in.</div>
+</td><td class="summaryTableOwnerCol">FacebookDesktop</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#requestExtendedPermissions()">requestExtendedPermissions</a>(callback:Function, ... extendedPermissions):void</div>
+<div class="summaryTableDescription">[static]
+     Opens a new window that asks the current user for
+     extended permissions.</div>
+</td><td class="summaryTableOwnerCol">FacebookDesktop</td>
+</tr>
+</table>
+</div>
+<a name="protectedMethodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Protected Methods</div>
+<table id="summaryTableProtectedMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#handleLogout()">handleLogout</a>(result:Object, fail:Object):void</div>
+<div class="summaryTableDescription"></div>
+</td><td class="summaryTableOwnerCol">FacebookDesktop</td>
+</tr>
+</table>
+</div>
+<script type="text/javascript" language="javascript">
+<!--
+showHideInherited();
+--></script>
+<div class="MainContent">
+<a name="propertyDetail"></a>
+<div class="detailSectionHeader">Property detail</div>
+<a name="locale"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">locale</td><td class="detailHeaderType">property</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>locale:String</code>&nbsp;&nbsp;[write-only]<span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set locale(value:String):void</code>
+<br>
+</div>
+<a name="manageSession"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">manageSession</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>manageSession:Boolean</code>&nbsp;&nbsp;[write-only]<p>
+     Setting to true (default), this class will manage
+     the session and access token internally.
+     Setting to false, no session management will occur
+     and the end developer must save the session manually.
+          </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set manageSession(value:Boolean):void</code>
+<br>
+</div>
+<a name="constructorDetail"></a>
+<div class="detailSectionHeader">Constructor detail</div>
+<a name="FacebookDesktop()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">FacebookDesktop</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">constructor</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function FacebookDesktop()</code><p>
+     Creates a new FacebookDesktop instance
+          </p></div>
+<a name="methodDetail"></a>
+<div class="detailSectionHeader">Method detail</div>
+<a name="api()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">api</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function api(method:String, callback:Function, params:String = null, requestMethod:* = GET):void</code><p>
+     Makes a new request on the Facebook Graph API.
+          </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">method</span>:String</code> &mdash; The method to call on the Graph API.
+     For example, to load the user's current friends, pass in /me/friends
+     </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">callback</span>:Function</code> &mdash; Method that will be called when this request is complete
+     The handler must have the signature of callback(result:Object, fail:Object);
+     On success, result will be the object data returned from Facebook.
+     On fail, result will be null and fail will contain information about the error.
+
+          </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">params</span>:String</code> (default = <code>null</code>)<code></code> &mdash; Any parameters to pass to Facebook.
+     For example, you can pass {file:myPhoto, message:'Some message'};
+     this will upload a photo to Facebook.
+     </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">requestMethod</span>:*</code> (default = <code>GET</code>)<code></code> &mdash;     The URLRequestMethod used to send values to Facebook.
+     The graph API follows correct Request method conventions.
+     GET will return data from Facebook.
+     POST will send data to Facebook.
+     DELETE will delete an object from Facebook.
+          </td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">flash.net.URLRequestMethod<br>
+<a href="http://developers.facebook.com/docs/api" target="mm_external">http://developers.facebook.com/docs/api</a>
+</div>
+</div>
+<a name="callRestAPI()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">callRestAPI</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function callRestAPI(methodName:String, callback:Function = null, values:String = null, requestMethod:* = GET):void</code><p>
+     Used to make old style RESTful API calls on Facebook.
+     Normally, you would use the Graph API to request data.
+     This method is here in case you need to use an old method,
+     such as FQL.
+          </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">methodName</span>:String</code> &mdash; Name of the method to call on
+     api.facebook.com (ex: fql.query).
+     </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">callback</span>:Function</code> (default = <code>null</code>)<code></code> &mdash; Any values to pass to this request.
+     </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">values</span>:String</code> (default = <code>null</code>)<code></code> &mdash; URLRequestMethod used to send data to Facebook.
+          </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">requestMethod</span>:*</code> (default = <code>GET</code>)<code></code></td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">com.facebook.graph.net.FacebookDesktop.request()</div>
+</div>
+<a name="deleteObject()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">deleteObject</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function deleteObject(method:String, callback:Function):void</code><p>
+     Deletes an object from Facebook.
+     The current user must have granted extended permission
+     to delete the corresponding object,
+     or an error will be returned.
+          </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">method</span>:String</code> &mdash; The id and connection of the object to delete.
+     For example, /POST_ID/like to remove a like from a message.
+          </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">callback</span>:Function</code></td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="http://developers.facebook.com/docs/api#deleting" target="mm_external">http://developers.facebook.com/docs/api#deleting</a>
+<br>com.facebook.graph.net.FacebookDesktop.request()</div>
+</div>
+<a name="fqlMultiQuery()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">fqlMultiQuery</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function fqlMultiQuery(queries:FQLMultiQuery, callback:Function = null, parser:IResultParser = null):void</code><p>
+  Executes an FQL multiquery on api.facebook.com.
+  
+  </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">queries</span>:FQLMultiQuery</code> &mdash; FQLMultiQuery The FQL queries to execute.
+  </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">callback</span>:Function</code> (default = <code>null</code>)<code></code> &mdash; IResultParser The parser used to parse result into object of name/value pairs. 
+  </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">parser</span>:IResultParser</code> (default = <code>null</code>)<code></code></td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="http://developers.facebook.com/docs/reference/fql/" target="mm_external">http://developers.facebook.com/docs/reference/fql/</a>
+<br>com.facebook.graph.net.Facebook.callRestAPI()</div>
+</div>
+<a name="fqlQuery()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">fqlQuery</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function fqlQuery(query:String, callback:Function = null, values:Object = null):void</code><p>
+  Executes an FQL query on api.facebook.com.
+  
+  </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">query</span>:String</code> &mdash; The FQL query string to execute.
+  </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">callback</span>:Function</code> (default = <code>null</code>)<code></code> &mdash; Replaces string values in the in the query. 
+  ie. Replaces {digit} or {id} with the corresponding key-value in the values object 
+  </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">values</span>:Object</code> (default = <code>null</code>)<code></code></td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="http://developers.facebook.com/docs/reference/fql/" target="mm_external">http://developers.facebook.com/docs/reference/fql/</a>
+<br>com.facebook.graph.net.Facebook.callRestAPI()</div>
+</div>
+<a name="getImageUrl()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">getImageUrl</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function getImageUrl(id:String, type:String = null):String</code><p>
+     Utility method to format a picture URL,
+     in order to load an image from Facebook.
+          </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">id</span>:String</code> &mdash; The id you wish to load an image from.
+     </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">type</span>:String</code> (default = <code>null</code>)<code></code> &mdash; The size of image to display from Facebook
+     (square, small, or large).
+          </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>String</code></td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="http://developers.facebook.com/docs/api#pictures" target="mm_external">http://developers.facebook.com/docs/api#pictures</a>
+</div>
+</div>
+<a name="getRawResult()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">getRawResult</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function getRawResult(data:Object):Object</code><p>
+     Returns a reference to the entire raw object
+  Facebook returns (including paging, etc.).
+          </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">data</span>:Object</code> &mdash; The result object.
+          </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Object</code></td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="http://developers.facebook.com/docs/api#reading" target="mm_external">http://developers.facebook.com/docs/api#reading</a>
+</div>
+</div>
+<a name="getSession()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">getSession</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function getSession():FacebookSession</code><p>
+     Synchronous call to return the current user's session.
+          </p><p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>FacebookSession</code></td>
+</tr>
+</table>
+</div>
+<a name="handleLogout()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">handleLogout</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function handleLogout(result:Object, fail:Object):void</code><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">result</span>:Object</code></td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">fail</span>:Object</code></td>
+</tr>
+</table>
+</div>
+<a name="hasNext()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">hasNext</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function hasNext(data:Object):Boolean</code><p>
+     Asks if another page exists
+  after this result object.
+          </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">data</span>:Object</code> &mdash; The result object.
+          </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Boolean</code></td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="http://developers.facebook.com/docs/api#reading" target="mm_external">http://developers.facebook.com/docs/api#reading</a>
+</div>
+</div>
+<a name="hasPrevious()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">hasPrevious</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function hasPrevious(data:Object):Boolean</code><p>
+     Asks if a page exists
+  before this result object.
+          </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">data</span>:Object</code> &mdash; The result object.
+          </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Boolean</code></td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="http://developers.facebook.com/docs/api#reading" target="mm_external">http://developers.facebook.com/docs/api#reading</a>
+</div>
+</div>
+<a name="init()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">init</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function init(applicationId:String, callback:Function = null, accessToken:String = null):void</code><p>
+     Initializes this Facebook singleton with your application ID.
+     You must call this method first.
+          </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">applicationId</span>:String</code> &mdash; The application ID you created at
+     http://www.facebook.com/developers/apps.php
+          </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">callback</span>:Function</code> (default = <code>null</code>)<code></code> &mdash; (Optional) Method to call when initialization is complete.
+     The handler must have the signature of callback(success:Object, fail:Object);
+     Success will be a FacebookSession if successful, or null if not.
+          </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">accessToken</span>:String</code> (default = <code>null</code>)<code></code> &mdash; (Optional) If you have a previously saved access_token, you can pass it in here.
+          </td>
+</tr>
+</table>
+</div>
+<a name="login()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">login</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function login(callback:Function, ... extendedPermissions):void</code><p>
+     Opens a new login window so the current user can log in to Facebook.
+          </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">callback</span>:Function</code> &mdash; The method to call when login is successful.
+     The handler must have the signature of callback(success:Object, fail:Object);
+     Success will be a FacebookSession if successful, or null if not.
+          </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code>... <span class="label">extendedPermissions</span></code> &mdash; (Optional) Array of extended permissions
+     to ask the user for once they are logged in.
+          For the most current list of extended permissions,
+     visit http://developers.facebook.com/docs/authentication/permissions
+          </td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="http://developers.facebook.com/docs/authentication" target="mm_external">http://developers.facebook.com/docs/authentication</a>
+<br>
+<a href="http://developers.facebook.com/docs/authentication/permissions" target="mm_external">http://developers.facebook.com/docs/authentication/permissions</a>
+</div>
+</div>
+<a name="logout()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">logout</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function logout(callback:Function = null, appOrigin:String = null):void</code><p>
+     Clears a user's local session.
+     This method is synchronous, since
+     its method does not log the user out of Facebook,
+     only the current application.
+  
+  </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">callback</span>:Function</code> (default = <code>null</code>)<code></code> &mdash; (Optional) Method to call when logout is done.
+  
+  </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">appOrigin</span>:String</code> (default = <code>null</code>)<code></code> &mdash; (Optional) The site url specified for your app. Required for clearing html window cookie.
+          </td>
+</tr>
+</table>
+</div>
+<a name="nextPage()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">nextPage</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function nextPage(data:Object, callback:Function):void</code><p>
+     Retrieves the next page that is associated with result object passed in.
+          </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">data</span>:Object</code> &mdash; The result object.
+  </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">callback</span>:Function</code> &mdash; Method that will be called when this request is complete
+     The handler must have the signature of callback(result:Object, fail:Object);
+     On success, result will be the object data returned from Facebook.
+     On fail, result will be null and fail will contain information about the error.
+  
+  </td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">com.facebook.graph.net.FacebookDesktop.request()<br>
+<a href="http://developers.facebook.com/docs/api#reading" target="mm_external">http://developers.facebook.com/docs/api#reading</a>
+</div>
+</div>
+<a name="postData()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">postData</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function postData(method:String, callback:Function, params:* = null):void</code><p>
+     Shortcut method to post data to Facebook.
+     Alternatively, you can call FacebookDesktop.request
+     and use POST for requestMethod.
+          </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">method</span>:String</code></td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">callback</span>:Function</code></td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">params</span>:*</code> (default = <code>null</code>)<code></code></td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">com.facebook.graph.net.FacebookDesktop.request()</div>
+</div>
+<a name="previousPage()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">previousPage</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function previousPage(data:Object, callback:Function):void</code><p>
+     Retrieves the previous page that is associated with result object passed in.
+          </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">data</span>:Object</code> &mdash; The result object.
+  </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">callback</span>:Function</code> &mdash; Method that will be called when this request is complete
+     The handler must have the signature of callback(result:Object, fail:Object);
+     On success, result will be the object data returned from Facebook.
+     On fail, result will be null and fail will contain information about the error.
+       </td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">com.facebook.graph.net.FacebookDesktop.request()<br>
+<a href="http://developers.facebook.com/docs/api#reading" target="mm_external">http://developers.facebook.com/docs/api#reading</a>
+</div>
+</div>
+<a name="requestExtendedPermissions()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">requestExtendedPermissions</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function requestExtendedPermissions(callback:Function, ... extendedPermissions):void</code><p>
+     Opens a new window that asks the current user for
+     extended permissions.
+  
+  </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">callback</span>:Function</code> &mdash; The method to call after request for permissions.
+  
+  </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code>... <span class="label">extendedPermissions</span></code> &mdash; Array of extended permissions to ask the user for once they are logged in.
+  
+       </td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">com.facebook.graph.net.FacebookDesktop.login()<br>
+<a href="http://developers.facebook.com/docs/authentication/permissions" target="mm_external">http://developers.facebook.com/docs/authentication/permissions</a>
+</div>
+</div>
+<br>
+<br>
+<hr>
+<br>
+<p></p>
+<center class="copyright"> 
+</center>
+</div>
+</body>
+</html>
+<!-- -->
